@@ -1,0 +1,273 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+:root{
+    --negro: #000;
+    --blanco: #fff;
+    --color-fondo: #fdeda6;
+    --color-textoPrincipal: #DC3535;
+    --color-fondoBoton1: #B01E68;
+    --color-fondoBoton2: #ffdcee;
+
+    --fuente-inter: "Inter", sans-serif;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-fondo);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 10rem;
+}
+
+.header{
+    position: relative;
+    top: 3rem;
+    left: 3rem;
+    width: 8rem;
+    height: 3.5rem;
+}
+
+.imagen__logo{
+    height: auto;
+    width: 100%;
+}
+
+.container__input{
+    width: 100%;
+    max-width: 36rem;
+    border-color: transparent;
+    background-color: transparent;
+    outline: none;
+    font-family: var(--fuente-inter);
+    font-size: 3.5rem;
+    color: var(--negro);
+    margin-bottom: 3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    resize: none;
+    height: 10rem;
+}
+
+::placeholder{
+    font-family: var(--fuente-inter);
+    color: var(--negro);
+}
+
+.contenedor__main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1.25rem;
+
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.container__izquierda{
+    width: 46rem;
+    height: 42rem;
+    background-color: #fff7d4;
+}
+
+.container__derecha{
+    width: 30rem;
+    height: 50rem;
+    background-color: var(--blanco);
+}
+
+.container__texto__transformado{
+    display: none;
+}
+
+.container__texto__transformado.visible{
+    font-size: 2rem;
+    font-family: var(--fuente-inter);
+    display: block;   
+}
+
+.container__botones{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Clase base para los botones */
+.container__boton{
+    border: 2px solid var(--negro);
+    border-radius: 8px;
+    padding: 10px 0px;
+    width: 38.8%;
+    font-family: var(--fuente-inter);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;  
+}
+
+/* Especificidad para cada boton */
+.container__boton__encriptar{
+    background-color: var(--color-fondoBoton1);
+    color: var(--blanco);
+}
+
+.container__boton__desencriptar{
+    background-color: var(--color-fondoBoton2);
+    color: var(--negro);
+}
+
+.container__boton__copiar{
+    background-color: var(--color-fondoBoton2);
+    color: var(--negro);
+    display: none;     /* Para ocultar inicialmente el boton "Copiar" */
+}
+
+.container__aclaraciones{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container__aclaraciones__texto{
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.mensaje__inicial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.mensaje__inicial__imagen{
+    width: 100%;
+}
+
+.mensaje__inicial__texto{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--negro);
+}
+
+.mensaje__inicial__texto__2{
+    font-size: 1.25rem;
+    color: var(--negro);
+}
+
+.footer{
+    background-color:var(--color-fondoBoton1);
+    padding: 2rem;
+
+    color: var(--blanco);
+    text-align: center;
+    font-family:var(--fuente-inter);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Para dispositivos moviles (pantallas de hasta 600px) */
+@media (max-width: 600px){
+    main{
+        flex-direction: column;
+        padding-top: 5rem;
+        gap: 2rem;
+    }
+
+    .header{
+        width: 6rem;
+        height: 2.5rem;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    .container__izquierda, .container__derecha {
+        width: 100%;
+        height: auto;
+    }
+
+    .container__input{
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .container__botones{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .container__boton{
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .mensaje__inicial__texto{
+        font-size: 1.5rem;
+    }
+
+    .mensaje__inicial__texto__2{
+        font-size: 1rem;
+    }
+}
+
+/* Para tabletas (pantallas entre 601px y 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    main{
+        flex-direction: column;
+        padding-top: 7rem;
+        gap: 3rem;
+    }
+
+    .header{
+        width: 7rem;
+        height: 3rem;
+        top: 2.5rem;
+        left: 2.5rem;
+    }
+
+    .container__izquierda, .container__derecha{
+        width: 90%;
+        height: auto;
+    }
+
+    .container__input{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .container__botones{
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1.5rem;
+    }
+
+    .container__boton{
+        width: 30%;
+        font-size: 0.9rem;
+    }
+
+    .mensaje__inicial__texto{
+        font-size: 1.75rem;
+    }
+
+    .mensaje__inicial__texto__2{
+        font-size: 1.125rem;
+    }
+}

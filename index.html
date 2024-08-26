@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="icon" href="/assets/gato.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <img class="imagen__logo" src="/assets/gato.png" alt="Icono de un gato con traje.">
+        <p class="texto__cabecera"></p>
+    </header>
+    <main>
+        <section class="contenedor__main container__izquierda">
+            <!--
+            <input type="text" id="mensaje" class="container__input" autocomplete="off" placeholder="Ingrese el texto aquí">
+            -->
+            <textarea id="mensaje" class="container__input" placeholder="Ingrese el texto aquí"></textarea>
+
+            
+            <div class="container__aclaraciones">
+                <p class="container__aclaraciones__texto">Solo letras minúsculas y sin acentos.</p>
+            </div>
+
+            <div class="container__botones">
+                <button onclick="codificar();" class="container__boton container__boton__encriptar" id="encriptar">Encriptar</button>
+                <button onclick="decodificar();" class="container__boton container__boton__desencriptar" id="desencriptar">Desencriptar</button>
+            </div>
+        </section>
+
+        <section class="contenedor__main container__derecha">
+
+            <div id="mensaje__inicial" class="mensaje__inicial">
+                <img src="/assets/img-derecha.png" alt="Imagen inicial" class="mensaje__inicial__imagen">
+                <p class="mensaje__inicial__texto">Ningún mensaje fue encontrado</p>
+                <p class="mensaje__inicial__texto__2">Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+
+            <div class="container__texto">
+                <p class="container__texto__transformado"></p>
+                <button onclick="copiarTexto();" class="container__boton container__boton__copiar" id="copiar">Copiar</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Desarrollado por GRP, Agosto 2024</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
